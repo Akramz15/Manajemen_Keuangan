@@ -117,42 +117,44 @@ export default function SavingsPage({ profile, onProfileUpdate }) {
                 <Target size={14} /> Ubah Target & Periode
               </button>
             ) : (
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-3)' }}>
-                <div style={{ display: 'flex', gap: 'var(--sp-2)' }}>
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--clr-text-3)', marginBottom: 4 }}>Mulai</div>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <div style={{ display: 'flex', gap: 'clamp(4px, 1.5vw, var(--sp-2))', marginBottom: 'var(--sp-3)', flexWrap: 'nowrap', width: '100%' }}>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ fontSize: 'clamp(0.65rem, 2vw, 0.75rem)', color: 'var(--clr-text-3)', marginBottom: 4 }}>Mulai</div>
                     <input
                       type="date"
                       className="form-input"
                       value={mulaiInput}
                       onChange={e => setMulaiInput(e.target.value)}
+                      style={{ fontSize: 'clamp(0.7rem, 2.5vw, 0.9rem)', padding: 'clamp(4px, 1vw, 10px)' }}
                     />
                   </div>
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--clr-text-3)', marginBottom: 4 }}>Selesai</div>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ fontSize: 'clamp(0.65rem, 2vw, 0.75rem)', color: 'var(--clr-text-3)', marginBottom: 4 }}>Selesai</div>
                     <input
                       type="date"
                       className="form-input"
                       value={selesaiInput}
                       onChange={e => setSelesaiInput(e.target.value)}
+                      style={{ fontSize: 'clamp(0.7rem, 2.5vw, 0.9rem)', padding: 'clamp(4px, 1vw, 10px)' }}
                     />
                   </div>
                 </div>
-                <div style={{ display: 'flex', gap: 'var(--sp-2)', alignItems: 'flex-end' }}>
-                  <div style={{ position: 'relative', flex: 1 }}>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--clr-text-3)', marginBottom: 4 }}>Target Tabungan</div>
-                    <span style={{ position: 'absolute', left: 10, bottom: 10, color: 'var(--clr-text-3)', fontSize: '0.85rem' }}>Rp</span>
+                <div style={{ display: 'flex', gap: 'clamp(4px, 1.5vw, var(--sp-2))', alignItems: 'flex-end', flexWrap: 'nowrap', width: '100%' }}>
+                  <div style={{ position: 'relative', flex: 1, minWidth: 0 }}>
+                    <div style={{ fontSize: 'clamp(0.65rem, 2vw, 0.75rem)', color: 'var(--clr-text-3)', marginBottom: 4, whiteSpace: 'nowrap' }}>Target Tabungan</div>
+                    <span style={{ position: 'absolute', left: 'clamp(6px, 1.5vw, 10px)', bottom: 'clamp(6px, 2vw, 10px)', color: 'var(--clr-text-3)', fontSize: 'clamp(0.7rem, 2vw, 0.85rem)' }}>Rp</span>
                     <input
                       type="text"
                       className="form-input"
-                      style={{ paddingLeft: 32 }}
+                      style={{ paddingLeft: 'clamp(24px, 6vw, 32px)', fontSize: 'clamp(0.75rem, 3vw, 0.9rem)', paddingRight: 'clamp(4px, 1vw, 10px)' }}
                       value={targetInput}
                       onChange={e => setTargetInput(e.target.value.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, '.'))}
                       autoFocus
                     />
                   </div>
-                  <button className="btn btn-primary btn-sm" onClick={saveTarget} style={{ height: 38 }}>Simpan</button>
-                  <button className="btn btn-ghost btn-sm" onClick={() => setEditTarget(false)} style={{ height: 38 }}>✕</button>
+                  <button className="btn btn-primary btn-sm" onClick={saveTarget} style={{ height: '38px', padding: '0 clamp(8px, 2vw, 16px)', fontSize: 'clamp(0.75rem, 2.5vw, 0.9rem)', flexShrink: 0 }}>Simpan</button>
+                  <button className="btn btn-ghost btn-sm" onClick={() => setEditTarget(false)} style={{ height: '38px', padding: '0 clamp(6px, 1.5vw, 12px)', flexShrink: 0 }}>✕</button>
                 </div>
               </div>
             )}

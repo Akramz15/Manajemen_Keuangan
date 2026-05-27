@@ -330,6 +330,26 @@ input, select, textarea { font-family: var(--font); }
   outline: none;
   transition: border-color var(--t-fast), box-shadow var(--t-fast);
   width: 100%;
+  min-height: 42px;
+}
+
+input[type="date"].form-input {
+  appearance: none;
+  -webkit-appearance: none;
+  text-align: left;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  margin: 0;
+}
+
+input[type="date"].form-input::-webkit-date-and-time-value {
+  text-align: left;
+  display: block;
+  width: 100%;
+  margin: 0;
 }
 
 .form-input:focus,

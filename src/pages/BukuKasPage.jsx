@@ -183,18 +183,18 @@ export default function BukuKasPage({ profile }) {
               style={{ width: 140 }}
             />
           </div>
-          <div style={{ marginLeft: 'auto', display: 'flex', gap: 'var(--sp-4)' }}>
-            <div style={{ textAlign: 'right' }}>
-              <div style={{ fontSize: '0.7rem', color: 'var(--clr-text-3)' }}>Total Masuk</div>
-              <div style={{ fontWeight: 'var(--fw-bold)', color: 'var(--clr-success)' }}>{formatRupiah(totalMasuk, true)}</div>
+          <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', gap: 'clamp(4px, 2vw, var(--sp-4))', marginTop: 'var(--sp-2)', flexWrap: 'nowrap' }}>
+            <div style={{ textAlign: 'left', flex: 1, minWidth: 0 }}>
+              <div style={{ fontSize: 'clamp(0.6rem, 2.5vw, 0.7rem)', color: 'var(--clr-text-3)', whiteSpace: 'nowrap' }}>Total Masuk</div>
+              <div style={{ fontWeight: 'var(--fw-bold)', color: 'var(--clr-success)', fontSize: 'clamp(0.7rem, 3.5vw, 1rem)', whiteSpace: 'nowrap' }}>{formatRupiah(totalMasuk, true)}</div>
             </div>
-            <div style={{ textAlign: 'right' }}>
-              <div style={{ fontSize: '0.7rem', color: 'var(--clr-text-3)' }}>Total Keluar</div>
-              <div style={{ fontWeight: 'var(--fw-bold)', color: 'var(--clr-danger)' }}>{formatRupiah(totalKeluar, true)}</div>
+            <div style={{ textAlign: 'center', flex: 1, minWidth: 0 }}>
+              <div style={{ fontSize: 'clamp(0.6rem, 2.5vw, 0.7rem)', color: 'var(--clr-text-3)', whiteSpace: 'nowrap' }}>Total Keluar</div>
+              <div style={{ fontWeight: 'var(--fw-bold)', color: 'var(--clr-danger)', fontSize: 'clamp(0.7rem, 3.5vw, 1rem)', whiteSpace: 'nowrap' }}>{formatRupiah(totalKeluar, true)}</div>
             </div>
-            <div style={{ textAlign: 'right' }}>
-              <div style={{ fontSize: '0.7rem', color: 'var(--clr-text-3)' }}>Saldo</div>
-              <div style={{ fontWeight: 'var(--fw-bold)', color: saldo >= 0 ? 'var(--clr-success)' : 'var(--clr-danger)' }}>
+            <div style={{ textAlign: 'right', flex: 1, minWidth: 0 }}>
+              <div style={{ fontSize: 'clamp(0.6rem, 2.5vw, 0.7rem)', color: 'var(--clr-text-3)', whiteSpace: 'nowrap' }}>Saldo</div>
+              <div style={{ fontWeight: 'var(--fw-bold)', color: saldo >= 0 ? 'var(--clr-success)' : 'var(--clr-danger)', fontSize: 'clamp(0.7rem, 3.5vw, 1rem)', whiteSpace: 'nowrap' }}>
                 {formatRupiah(saldo, true)}
               </div>
             </div>

@@ -54,7 +54,7 @@ export default function TransactionPage({ profile }) {
             />
           </div>
 
-          <div style={{ display: 'flex', gap: 'var(--sp-3)', alignItems: 'center', marginLeft: 'auto' }}>
+          <div style={{ display: 'flex', gap: 'var(--sp-3)', alignItems: 'center' }}>
             <select
               className="form-select"
               value={jenisTampil}
