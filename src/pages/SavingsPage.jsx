@@ -69,9 +69,10 @@ export default function SavingsPage({ profile, onProfileUpdate }) {
       <div className="page-header">
         <div>
           <h1 className="page-title">Rencana Tabungan</h1>
-          <p className="page-subtitle">
-            Periode: {formatTanggal(periodeMulai, 'short')} - {formatTanggal(periodeSelesai, 'short')} · Profil: {PROFIL_LABEL[profile?.profesi] || '—'}
-          </p>
+          <div className="page-subtitle" style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+            <span>Periode: {formatTanggal(periodeMulai, 'short')} - {formatTanggal(periodeSelesai, 'short')}</span>
+            <span>Profil: {PROFIL_LABEL[profile?.profesi] || '—'}</span>
+          </div>
         </div>
       </div>
 

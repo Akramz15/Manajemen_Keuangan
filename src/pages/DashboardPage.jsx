@@ -1,5 +1,5 @@
-import { useState, useCallback } from 'react'
-import { Plus, TrendingUp, TrendingDown, Wallet, PiggyBank, BarChart2 } from 'lucide-react'
+import { useState } from 'react'
+import { TrendingUp, TrendingDown, Wallet, PiggyBank, BarChart2 } from 'lucide-react'
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts'
 import {
   formatRupiah, formatTanggal,
@@ -8,7 +8,6 @@ import {
   getTanggalHariIni
 } from '../lib/utils.js'
 import { getTransactions } from '../lib/storage.js'
-import TransactionForm from '../components/TransactionForm.jsx'
 import InsightCard from '../components/InsightCard.jsx'
 
 const COLORS = ['#6C63FF','#10D9A0','#FF5757','#FFB547','#47CAFF','#FF85A2','#A8FF78','#FF9F43','#C8A2C8']
@@ -24,10 +23,7 @@ const CustomTooltip = ({ active, payload }) => {
 }
 
 export default function DashboardPage({ profile }) {
-  const [showForm, setShowForm] = useState(false)
-  const [transactions, setTransactions] = useState(() => getTransactions())
-
-  const refresh = useCallback(() => setTransactions(getTransactions()), [])
+  const [transactions] = useState(() => getTransactions())
 
   const periodeMulai     = profile?.periodeMulai || getTanggalHariIni()
   const periodeSelesai   = profile?.periodeSelesai || getTanggalHariIni()
@@ -94,9 +90,6 @@ export default function DashboardPage({ profile }) {
             {formatTanggal(periodeMulai, 'short')} - {formatTanggal(periodeSelesai, 'short')} · Hari ke-{hariKe} dari {totalHari} hari
           </p>
         </div>
-        <button className="btn btn-primary" onClick={() => setShowForm(true)} id="btn-add-tx">
-          <Plus size={16} /> Tambah Transaksi
-        </button>
       </div>
 
       {/* Stat Cards */}
@@ -240,12 +233,6 @@ export default function DashboardPage({ profile }) {
         </div>
       </div>
 
-      {showForm && (
-        <TransactionForm
-          onClose={() => setShowForm(false)}
-          onAdded={refresh}
-        />
-      )}
     </div>
   )
 }

@@ -20,8 +20,15 @@ export default function App() {
   const [isSyncing, setIsSyncing] = useState(false)
   const [view, setView] = useState('landing')
   const [profile, setProfile] = useState(null)
-  const [activePage, setActivePage] = useState('dashboard')
+  const [activePage, setActivePage] = useState(() => {
+    return localStorage.getItem('finsight_active_page') || 'dashboard'
+  })
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false)
+
+  // Sync active page to local storage
+  useEffect(() => {
+    localStorage.setItem('finsight_active_page', activePage)
+  }, [activePage])
 
   // When Auth state changes, sync from cloud and set view
   useEffect(() => {
