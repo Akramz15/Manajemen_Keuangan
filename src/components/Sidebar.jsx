@@ -18,14 +18,23 @@ export default function Sidebar({ activePage, onNavigate, profile, onLogout }) {
   const sidebarContent = (
     <>
       {/* Logo */}
-      <div className="sidebar-logo">
-        <div className="sidebar-logo-icon">
-          <TrendingUp size={18} color="white" />
+      <div className="sidebar-logo" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-3)' }}>
+          <div className="sidebar-logo-icon">
+            <TrendingUp size={18} color="white" />
+          </div>
+          <div>
+            <div className="sidebar-logo-text">FinSight</div>
+            <div className="sidebar-logo-sub">Keuangan Pintar</div>
+          </div>
         </div>
-        <div>
-          <div className="sidebar-logo-text">FinSight</div>
-          <div className="sidebar-logo-sub">Keuangan Pintar</div>
-        </div>
+        <button 
+          className="mobile-close-btn" 
+          onClick={() => setMobileOpen(false)}
+          style={{ background: 'transparent', border: 'none', color: 'var(--clr-text-2)', cursor: 'pointer', display: 'none', alignItems: 'center', justifyContent: 'center' }}
+        >
+          <X size={20} />
+        </button>
       </div>
 
       {/* Nav */}
@@ -127,10 +136,12 @@ export default function Sidebar({ activePage, onNavigate, profile, onLogout }) {
           alignItems: 'center',
           justifyContent: 'center',
           color: 'var(--clr-text)',
+          opacity: mobileOpen ? 0 : 1,
+          pointerEvents: mobileOpen ? 'none' : 'auto'
         }}
         id="mobile-menu-btn"
       >
-        {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+        <Menu size={20} />
       </button>
 
       {/* Mobile Sidebar Overlay */}
@@ -145,6 +156,10 @@ export default function Sidebar({ activePage, onNavigate, profile, onLogout }) {
         @media (max-width: 1024px) {
           #mobile-menu-btn { display: flex !important; }
           .sidebar { transform: ${mobileOpen ? 'translateX(0)' : 'translateX(-100%)'}; }
+          .mobile-close-btn { display: flex !important; }
+        }
+        @media (min-width: 1025px) {
+          .mobile-close-btn { display: none !important; }
         }
       `}</style>
     </>

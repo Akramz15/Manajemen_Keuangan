@@ -239,25 +239,27 @@ export default function OnboardingPage({ onComplete }) {
               )}
             </div>
 
-            <div style={{ display: 'flex', gap: 'var(--sp-2)' }}>
-              <div className="form-group" style={{ flex: 1 }}>
-                <label className="form-label">Periode Mulai</label>
+            <div style={{ display: 'flex', gap: 'clamp(4px, 1.5vw, var(--sp-2))', flexWrap: 'nowrap', width: '100%' }}>
+              <div className="form-group" style={{ flex: 1, minWidth: 0 }}>
+                <label className="form-label" style={{ fontSize: 'clamp(0.7rem, 2.5vw, 0.875rem)', whiteSpace: 'nowrap' }}>Periode Mulai</label>
                 <input
                   type="date"
                   name="periodeMulai"
                   className="form-input"
                   value={form.periodeMulai}
                   onChange={handleChange}
+                  style={{ fontSize: 'clamp(0.7rem, 2.5vw, 0.9rem)', padding: 'clamp(4px, 1.5vw, 10px)' }}
                 />
               </div>
-              <div className="form-group" style={{ flex: 1 }}>
-                <label className="form-label">Periode Selesai</label>
+              <div className="form-group" style={{ flex: 1, minWidth: 0 }}>
+                <label className="form-label" style={{ fontSize: 'clamp(0.7rem, 2.5vw, 0.875rem)', whiteSpace: 'nowrap' }}>Periode Selesai</label>
                 <input
                   type="date"
                   name="periodeSelesai"
                   className="form-input"
                   value={form.periodeSelesai}
                   onChange={handleChange}
+                  style={{ fontSize: 'clamp(0.7rem, 2.5vw, 0.9rem)', padding: 'clamp(4px, 1.5vw, 10px)' }}
                 />
               </div>
             </div>
@@ -312,14 +314,14 @@ export default function OnboardingPage({ onComplete }) {
                     </div>
 
                     {/* Frekuensi toggle */}
-                    <div className="radio-group" style={{ marginBottom: 'var(--sp-3)' }}>
+                    <div className="radio-group" style={{ marginBottom: 'var(--sp-3)', flexWrap: 'nowrap', width: '100%' }}>
                       {['harian', 'mingguan', 'bulanan'].map(f => (
                         <button
                           type="button"
                           key={f}
                           className={`radio-btn ${frek === f ? 'active' : ''}`}
                           onClick={() => handleFrekuensiKebutuhan(key, f)}
-                          style={{ fontSize: '0.78rem' }}
+                          style={{ fontSize: 'clamp(0.6rem, 2.5vw, 0.78rem)', whiteSpace: 'nowrap', padding: 'clamp(4px, 1vw, 8px) clamp(4px, 1.5vw, 12px)', flex: 1, minWidth: 0 }}
                         >
                           {f === 'harian' ? 'Per Hari' : f === 'mingguan' ? 'Per Minggu' : 'Per Bulan'}
                         </button>
@@ -362,14 +364,15 @@ export default function OnboardingPage({ onComplete }) {
               ['Periode', `${form.periodeMulai} s/d ${form.periodeSelesai}`],
               ['Target Tabungan', `Rp ${form.targetTabungan} / periode`],
             ].map(([k, v]) => (
-              <div key={k} style={{ display: 'flex', justifyContent: 'space-between', padding: 'var(--sp-3)', background: 'var(--clr-surface)', borderRadius: 'var(--r-md)', border: '1px solid var(--clr-border)' }}>
+              <div key={k} style={{ display: 'flex', justifyContent: 'space-between', gap: 'var(--sp-2)', padding: 'var(--sp-3)', background: 'var(--clr-surface)', borderRadius: 'var(--r-md)', border: '1px solid var(--clr-border)', flexWrap: 'wrap' }}>
                 <span style={{ color: 'var(--clr-text-2)', fontSize: '0.875rem' }}>{k}</span>
-                <span style={{ fontWeight: 'var(--fw-semi)', fontSize: '0.875rem' }}>{v}</span>
+                <span style={{ fontWeight: 'var(--fw-semi)', fontSize: '0.875rem', textAlign: 'right', wordBreak: 'break-word', minWidth: '50%' }}>{v}</span>
               </div>
             ))}
             <div className="card card-success" style={{ padding: 'var(--sp-3)' }}>
-              <div style={{ fontSize: '0.8rem', color: 'var(--clr-success)', display: 'flex', alignItems: 'center', gap: 6 }}>
-                <ShieldCheck size={16} /> Data hanya tersimpan di browser kamu. Tidak dikirim ke server manapun.
+              <div style={{ fontSize: '0.8rem', color: 'var(--clr-success)', display: 'flex', alignItems: 'flex-start', gap: '8px', lineHeight: 1.4 }}>
+                <ShieldCheck size={16} style={{ flexShrink: 0, marginTop: '2px' }} />
+                <span>Data hanya tersimpan di browser kamu.<br/>Tidak dikirim ke server manapun.</span>
               </div>
             </div>
           </div>
