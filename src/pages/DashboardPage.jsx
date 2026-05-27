@@ -104,7 +104,7 @@ export default function DashboardPage({ profile }) {
         {statCards.map((s, i) => {
           const Icon = s.icon
           return (
-            <div className="card" key={i} style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-3)' }}>
+            <div className="card" key={i} style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-3)', containerType: 'inline-size' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-2)' }}>
                 <div className={`icon-circle ${s.cls}`} style={{ width: 36, height: 36 }}>
                   <Icon size={16} />
@@ -113,7 +113,7 @@ export default function DashboardPage({ profile }) {
                   {s.label}
                 </div>
               </div>
-              <div style={{ fontSize: '1.4rem', fontWeight: 'var(--fw-bold)', color: s.color, wordBreak: 'break-word', lineHeight: 1 }}>
+              <div style={{ fontSize: 'min(1.4rem, 12cqi)', fontWeight: 'var(--fw-bold)', color: s.color, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', lineHeight: 1 }}>
                 {s.value}
               </div>
             </div>

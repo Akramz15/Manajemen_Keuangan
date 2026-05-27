@@ -70,9 +70,9 @@ export default function ReportPage({ profile }) {
           { label: 'Total Pengeluaran', value: formatRupiah(summary.pengeluaran), color: 'var(--clr-danger)' },
           { label: 'Saldo Akhir',      value: formatRupiah(summary.saldo), color: summary.saldo >= 0 ? 'var(--clr-success)' : 'var(--clr-danger)' },
         ].map((s, i) => (
-          <div className="card" key={i} style={{ textAlign: 'center' }}>
+          <div className="card" key={i} style={{ textAlign: 'center', containerType: 'inline-size' }}>
             <div style={{ fontSize: '0.8rem', color: 'var(--clr-text-2)', marginBottom: 'var(--sp-2)' }}>{s.label}</div>
-            <div style={{ fontSize: '1.4rem', fontWeight: 'var(--fw-black)', color: s.color }}>{s.value}</div>
+            <div style={{ fontSize: 'min(1.4rem, 12cqi)', fontWeight: 'var(--fw-black)', color: s.color, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{s.value}</div>
           </div>
         ))}
       </div>

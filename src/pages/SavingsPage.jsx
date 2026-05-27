@@ -97,12 +97,13 @@ export default function SavingsPage({ profile, onProfileUpdate }) {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                gap: 'var(--sp-2)'
+                gap: 'var(--sp-2)',
+                containerType: 'inline-size'
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-2)', color: 'var(--clr-text-3)', fontSize: '0.8rem', fontWeight: 'var(--fw-medium)' }}>
                   <div style={{ color: item.color }}>{item.icon}</div> {item.label}
                 </div>
-                <div style={{ fontWeight: 'var(--fw-bold)', fontSize: '1.25rem', color: 'var(--clr-text)' }}>
+                <div style={{ fontWeight: 'var(--fw-bold)', fontSize: 'min(1.25rem, 12cqi)', color: 'var(--clr-text)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                   {item.value}
                 </div>
               </div>
