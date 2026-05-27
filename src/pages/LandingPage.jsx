@@ -94,14 +94,20 @@ export default function LandingPage() {
           dan mendapatkan rekomendasi budget harian personal — semua dengan bantuan AI.
         </p>
 
-        <div style={{ display: 'flex', gap: 'var(--sp-3)', flexWrap: 'wrap', justifyContent: 'center' }}>
-          <button className="btn btn-primary btn-lg" onClick={handleGoogleLogin} disabled={loading} id="cta-hero">
+        <div style={{ display: 'flex', gap: 'clamp(8px, 2vw, 16px)', flexWrap: 'nowrap', justifyContent: 'center', width: '100%' }}>
+          <button 
+            className="btn btn-primary btn-lg" 
+            onClick={handleGoogleLogin} 
+            disabled={loading} 
+            id="cta-hero"
+            style={{ fontSize: 'clamp(0.75rem, 3.5vw, 1rem)', padding: 'clamp(8px, 2vw, 14px) clamp(12px, 3vw, 32px)', whiteSpace: 'nowrap', flexShrink: 1 }}
+          >
             <GoogleIcon /> {loading ? 'Mohon Tunggu...' : 'Mulai dengan Google'}
           </button>
           <a
             href="#features"
             className="btn btn-ghost btn-lg"
-            style={{ textDecoration: 'none' }}
+            style={{ textDecoration: 'none', fontSize: 'clamp(0.75rem, 3.5vw, 1rem)', padding: 'clamp(8px, 2vw, 14px) clamp(12px, 3vw, 32px)', whiteSpace: 'nowrap', flexShrink: 1 }}
           >
             Lihat Fitur
           </a>
@@ -109,8 +115,8 @@ export default function LandingPage() {
 
         {/* Stats */}
         <div style={{
-          display: 'flex', gap: 'var(--sp-8)', marginTop: 'var(--sp-12)',
-          flexWrap: 'wrap', justifyContent: 'center'
+          display: 'flex', gap: 'clamp(12px, 3vw, var(--sp-8))', marginTop: 'var(--sp-12)',
+          flexWrap: 'nowrap', justifyContent: 'center', width: '100%', overflow: 'hidden'
         }}>
           {[
             { label: 'Fitur Lengkap', value: '9+' },
@@ -118,9 +124,9 @@ export default function LandingPage() {
             { label: 'AI Model', value: 'Llama 3.3' },
             { label: 'Biaya Backend', value: 'Rp 0' },
           ].map((s, i) => (
-            <div key={i} style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '1.8rem', fontWeight: 'var(--fw-black)', color: 'var(--clr-primary-l)' }}>{s.value}</div>
-              <div style={{ fontSize: '0.8rem', color: 'var(--clr-text-3)' }}>{s.label}</div>
+            <div key={i} style={{ textAlign: 'center', flexShrink: 1, minWidth: 0 }}>
+              <div style={{ fontSize: 'clamp(1.1rem, 5vw, 1.8rem)', fontWeight: 'var(--fw-black)', color: 'var(--clr-primary-l)', whiteSpace: 'nowrap' }}>{s.value}</div>
+              <div style={{ fontSize: 'clamp(0.6rem, 2.5vw, 0.8rem)', color: 'var(--clr-text-3)', whiteSpace: 'nowrap' }}>{s.label}</div>
             </div>
           ))}
         </div>
