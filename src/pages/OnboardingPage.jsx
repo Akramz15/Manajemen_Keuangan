@@ -239,27 +239,27 @@ export default function OnboardingPage({ onComplete }) {
               )}
             </div>
 
-            <div style={{ display: 'flex', gap: 'clamp(4px, 1.5vw, var(--sp-2))', flexWrap: 'nowrap', width: '100%' }}>
+            <div style={{ display: 'flex', gap: 'var(--sp-2)', flexWrap: 'nowrap', width: '100%' }}>
               <div className="form-group" style={{ flex: 1, minWidth: 0 }}>
-                <label className="form-label" style={{ fontSize: 'clamp(0.7rem, 2.5vw, 0.875rem)', whiteSpace: 'nowrap' }}>Periode Mulai</label>
+                <label className="form-label" style={{ whiteSpace: 'nowrap' }}>Periode Mulai</label>
                 <input
                   type="date"
                   name="periodeMulai"
                   className="form-input"
                   value={form.periodeMulai}
                   onChange={handleChange}
-                  style={{ fontSize: 'clamp(0.7rem, 2.5vw, 0.9rem)', padding: 'clamp(4px, 1.5vw, 10px)' }}
+                  style={{ padding: '10px 8px' }}
                 />
               </div>
               <div className="form-group" style={{ flex: 1, minWidth: 0 }}>
-                <label className="form-label" style={{ fontSize: 'clamp(0.7rem, 2.5vw, 0.875rem)', whiteSpace: 'nowrap' }}>Periode Selesai</label>
+                <label className="form-label" style={{ whiteSpace: 'nowrap' }}>Periode Selesai</label>
                 <input
                   type="date"
                   name="periodeSelesai"
                   className="form-input"
                   value={form.periodeSelesai}
                   onChange={handleChange}
-                  style={{ fontSize: 'clamp(0.7rem, 2.5vw, 0.9rem)', padding: 'clamp(4px, 1.5vw, 10px)' }}
+                  style={{ padding: '10px 8px' }}
                 />
               </div>
             </div>

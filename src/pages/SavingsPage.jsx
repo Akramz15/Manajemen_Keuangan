@@ -118,25 +118,25 @@ export default function SavingsPage({ profile, onProfileUpdate }) {
               </button>
             ) : (
               <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', gap: 'clamp(4px, 1.5vw, var(--sp-2))', marginBottom: 'var(--sp-3)', flexWrap: 'nowrap', width: '100%' }}>
+                <div style={{ display: 'flex', gap: 'var(--sp-2)', marginBottom: 'var(--sp-3)', flexWrap: 'nowrap', width: '100%' }}>
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ fontSize: 'clamp(0.65rem, 2vw, 0.75rem)', color: 'var(--clr-text-3)', marginBottom: 4 }}>Mulai</div>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--clr-text-3)', marginBottom: 4 }}>Mulai</div>
                     <input
                       type="date"
                       className="form-input"
                       value={mulaiInput}
                       onChange={e => setMulaiInput(e.target.value)}
-                      style={{ fontSize: 'clamp(0.7rem, 2.5vw, 0.9rem)', padding: 'clamp(4px, 1vw, 10px)' }}
+                      style={{ padding: '10px 8px' }}
                     />
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ fontSize: 'clamp(0.65rem, 2vw, 0.75rem)', color: 'var(--clr-text-3)', marginBottom: 4 }}>Selesai</div>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--clr-text-3)', marginBottom: 4 }}>Selesai</div>
                     <input
                       type="date"
                       className="form-input"
                       value={selesaiInput}
                       onChange={e => setSelesaiInput(e.target.value)}
-                      style={{ fontSize: 'clamp(0.7rem, 2.5vw, 0.9rem)', padding: 'clamp(4px, 1vw, 10px)' }}
+                      style={{ padding: '10px 8px' }}
                     />
                   </div>
                 </div>

@@ -35,22 +35,22 @@ export default function TransactionPage({ profile }) {
       {/* Filter Bar */}
       <div className="card" style={{ marginBottom: 'var(--sp-4)', padding: 'var(--sp-4)' }}>
         <div style={{ display: 'flex', gap: 'var(--sp-3)', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div style={{ display: 'flex', gap: 'clamp(4px, 1.5vw, var(--sp-2))', alignItems: 'center', flexWrap: 'nowrap', width: '100%' }}>
-            <label className="form-label" style={{ margin: 0, whiteSpace: 'nowrap', fontSize: 'clamp(0.7rem, 2.5vw, 0.875rem)' }}>Dari:</label>
+          <div style={{ display: 'flex', gap: 'var(--sp-2)', alignItems: 'center', flexWrap: 'nowrap', flex: '1 1 auto', minWidth: 0 }}>
+            <label className="form-label" style={{ margin: 0, whiteSpace: 'nowrap' }}>Dari:</label>
             <input
               type="date"
               className="form-input"
               value={startDate}
               onChange={e => setStartDate(e.target.value)}
-              style={{ flex: 1, minWidth: 0, padding: 'clamp(4px, 1.5vw, 10px)', fontSize: 'clamp(0.7rem, 2.5vw, 0.9rem)' }}
+              style={{ flex: 1, minWidth: 0, maxWidth: 160, padding: '10px 8px' }}
             />
-            <label className="form-label" style={{ margin: '0 0 0 clamp(4px, 1.5vw, var(--sp-2))', whiteSpace: 'nowrap', fontSize: 'clamp(0.7rem, 2.5vw, 0.875rem)' }}>Sampai:</label>
+            <label className="form-label" style={{ margin: 0, whiteSpace: 'nowrap' }}>Sampai:</label>
             <input
               type="date"
               className="form-input"
               value={endDate}
               onChange={e => setEndDate(e.target.value)}
-              style={{ flex: 1, minWidth: 0, padding: 'clamp(4px, 1.5vw, 10px)', fontSize: 'clamp(0.7rem, 2.5vw, 0.9rem)' }}
+              style={{ flex: 1, minWidth: 0, maxWidth: 160, padding: '10px 8px' }}
             />
           </div>
 

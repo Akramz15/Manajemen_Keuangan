@@ -205,10 +205,11 @@ export default function BukuKasPage({ profile }) {
       {/* Tabel Buku Kas */}
       <div className="card" style={{ padding: 0 }}>
         <div style={{ padding: 'var(--sp-4) var(--sp-5)', borderBottom: '1px solid var(--clr-border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div style={{ fontWeight: 'var(--fw-bold)', display: 'flex', alignItems: 'center', gap: 8 }}>
-            <Book size={18} /> Buku Kas — {formatTanggal(startDate, 'short')} s/d {formatTanggal(endDate, 'short')}
+          <div style={{ fontWeight: 'var(--fw-bold)', display: 'flex', alignItems: 'flex-start', gap: 8, flex: 1, minWidth: 0 }}>
+            <Book size={18} style={{ flexShrink: 0, marginTop: 2 }} /> 
+            <span style={{ lineHeight: 1.4 }}>Buku Kas — {formatTanggal(startDate, 'short')} s/d {formatTanggal(endDate, 'short')}</span>
           </div>
-          <div style={{ fontSize: '0.8rem', color: 'var(--clr-text-3)' }}>
+          <div style={{ fontSize: '0.8rem', color: 'var(--clr-text-3)', whiteSpace: 'nowrap', flexShrink: 0, marginLeft: 'var(--sp-3)' }}>
             {entriesPeriode.length} entri
           </div>
         </div>
